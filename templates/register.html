@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>user reg</title>
+</head>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+    {{myform.as_p}}
+    <button type="submit" name="button">Save</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Upload Paper</title>
+  </head>
+  <body>
+    <form action="/image/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{addPaperForm.as_p}}
+      <input type="submit" name="save" value="save">
+    </form>
+
+    <form action="/deleteimg/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="submit" name="del" value="delete">
+    </form>
+  </body>
+</html>

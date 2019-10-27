@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for paper in paperquery %}
+                {{ paper.course_code }}
+                {{ paper.year }}
+                {{ paper.tierce }}
+                {{ paper.instructor }}
+                <a href="{{paper.paper.url}}">click here</a>
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if empty == True %}
+      <h1>nothing to show</h1>
+    {% else %}
+      <form action="/showPapers/" method="POST">
+        {% csrf_token %}
+        <select name="coursename">
+          {% for course in coursequery %}
+            <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+            {% endfor %}
+          </select>
+          <input type="submit" name="ok" value="show papers">
+        </form>
+    {% endif %}
+  </body>
+</html>

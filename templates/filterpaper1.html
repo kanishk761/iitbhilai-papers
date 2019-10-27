@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for course in coursequery %}
+      <li>{{ course.course_name }}</li>
+    {% endfor %}
+    <form action="/filterPaper1/" method="POST">
+      {% csrf_token %}
+      <select name="program">
+        {% for program in programs %}
+                    <option value="{{ program.program }}">{{ program.program }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+
+      <select name="course_type">
+        {% for coursetype in courseTypes %}
+                    <option value="{{ coursetype.course_type }}">{{ coursetype.course_type }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+
+      <select name="department">
+        {% for department in departments %}
+          {% if department.department == "" %}
+                    <option value="none">None</option>
+          {% else %}
+                    <option value="{{ department.department }}">{{ department.department }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit" name="details">
+
+    </form>
+  </body>
+</html>
