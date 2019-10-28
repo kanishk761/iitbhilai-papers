@@ -33,9 +33,8 @@ urlpatterns = [
     path('addTodo/', addTodo),
     path('deleteTodo/<int:item_id>/', deleteTodo),
     path('adduser/', getUser),
-    path('image/', imageUploadShow),
-    path('deleteimg/', deleteimg),
-    path('filterPaper1/', filterPaper1),
+    path('uploadpaper/', paperUploadShow),
+    path('filterPaper/', filterPaper),
     path('showPapers/<str:code>/', showPapers),
     path('showPapers/', showPapers)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

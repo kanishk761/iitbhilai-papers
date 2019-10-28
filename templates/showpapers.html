@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+    {% if empty == True %}
+      <h1>nothing to show</h1>
+    {% else %}
     {% for paper in paperquery %}
                 {{ paper.course_code }}
                 {{ paper.year }}
@@ -12,5 +15,6 @@
                 {{ paper.instructor }}
                 <a href="{{paper.paper.url}}">click here</a>
     {% endfor %}
+    {% endif %}
   </body>
 </html>

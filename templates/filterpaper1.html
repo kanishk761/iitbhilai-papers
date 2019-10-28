@@ -8,7 +8,7 @@
     {% for course in coursequery %}
       <li>{{ course.course_name }}</li>
     {% endfor %}
-    <form action="/filterPaper1/" method="POST">
+    <form action="/filterPaper/" method="POST">
       {% csrf_token %}
       <select name="program">
         {% for program in programs %}
